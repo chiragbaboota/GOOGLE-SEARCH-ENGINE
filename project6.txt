@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Google-like search engine</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            background-image: url(pic18.jpg);
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        section .main {
+            max-width: 600px;
+            text-align: center;
+            background-image: url(pic13.jpg);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        section .main img {
+            max-width: 100%;
+            height: auto;
+        }
+        section .main .searchBx {
+            position: relative;
+            margin-top: 20px;
+        }
+        section .main .searchBx .query {
+            width: 100%;
+            padding: 13px;
+            border: 1px solid #ccc;
+            outline: none;
+            font-size: 16px;
+            border-radius: 30px;
+            padding-left: 45px;
+            padding-right: 60px;
+        }
+        section .main .searchBx .icon {
+            position: absolute;
+            top: 50%;
+            left: 15px;
+            transform: translateY(-50%);
+        }
+        section .main .searchBx .icon img {
+            max-width: 100%;
+        }
+        .mic-icon {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+        }
+        .searchBtn {
+            margin-top: 20px;
+            padding: 12px 20px;
+            color: gray;
+            font-size: 14px;
+            border: none;
+            cursor: pointer;
+            border-radius: 4px;
+            border: 1px solid black;
+            outline: none;
+            background-color: white;
+        }
+        .searchBtn:hover {
+            border: 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <script>
+    function performSearch() {
+        var query = document.querySelector('.query').value;
+        var googleSearchUrl = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+        window.location.href = googleSearchUrl;
+    }
+    function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            performSearch();
+        }
+    }
+    document.getElementById('searchButton').addEventListener('click', performSearch);
+    </script>
+    <section>
+        <div class="main">
+            <img src="C:\Users\Chirag\OneDrive\Pictures\shroogle.jpg" alt="Google">
+            <div class="searchBx">
+                <input type="search" name="" class="query" placeholder="Search..." onkeypress="handleKeyPress(event)">
+                <div class="icon">
+                    <img src="C:\Users\Chirag\OneDrive\Desktop\FEE\fee project\search.png" alt="Search">
+                </div>
+                <div class="mic-icon">
+                    <img src="C:\Users\Chirag\OneDrive\Desktop\FEE\fee project\mic.png" alt="mic">
+                </div>
+            </div>
+            <button class="searchBtn" onclick="performSearch()">Search</button>
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url(pic8.jpg);
+            background-size: cover;
+            text-align: center;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .person {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: rgb(0, 166, 255);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .person:hover {
+            background-color: #f9f9f9;
+        }
+        .person h2 {
+            color: #333;
+            margin-bottom: 5px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .person p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .details {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="person" onclick="toggleDetails('chirag')">
+            <h2>Chirag</h2>
+            <div class="details" id="chirag-details">
+                <p>Leader</p>
+                <p>Chirag is the leader of our team. He has handled the main page code, leading the entire project with precision and dedication.</p>
+            </div>
+        </div>
+        <div class="person" onclick="toggleDetails('daksh')">
+            <h2>Daksh</h2>
+            <div class="details" id="daksh-details">
+                <p>Login Page Geek</p>
+                <p>Daksh is our go-to person for everything related to the login page. He has played a crucial role in constructing an attractive and user-friendly login page.</p>
+            </div>
+        </div>
+        <div class="person" onclick="toggleDetails('daman')">
+            <h2>Daman</h2>
+            <div class="details" id="daman-details">
+                <p>Project File Curator</p>
+                <p>Daman is our project file curator, ensuring that all files are well-organized and accessible. His meticulous approach helps in maintaining a smooth workflow, and he's an integral part of the team.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        function toggleDetails(personId) {
+            var details = document.getElementById(personId + '-details');
+            details.style.display = details.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
